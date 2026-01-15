@@ -1,0 +1,85 @@
+{
+  "name": "Assignment",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "course_id": {
+      "type": "string"
+    },
+    "course_assignment_id": {
+      "type": "string"
+    },
+    "faculty_id": {
+      "type": "string"
+    },
+    "assignment_type": {
+      "type": "string",
+      "enum": [
+        "homework",
+        "quiz",
+        "project",
+        "lab_report",
+        "presentation",
+        "exam"
+      ],
+      "default": "homework"
+    },
+    "total_marks": {
+      "type": "number"
+    },
+    "weightage": {
+      "type": "number",
+      "description": "Percentage weightage in final grade"
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "instructions": {
+      "type": "string"
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "allow_late_submission": {
+      "type": "boolean",
+      "default": false
+    },
+    "late_penalty_percent": {
+      "type": "number",
+      "default": 0
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "published",
+        "closed"
+      ],
+      "default": "draft"
+    }
+  },
+  "required": [
+    "title",
+    "course_id",
+    "faculty_id",
+    "total_marks",
+    "due_date"
+  ]
+}

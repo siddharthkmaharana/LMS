@@ -1,0 +1,43 @@
+{
+  "name": "ActivityLog",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "user_email": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "create",
+        "update",
+        "delete",
+        "login",
+        "logout",
+        "view",
+        "export"
+      ],
+      "default": "view"
+    },
+    "entity_type": {
+      "type": "string",
+      "description": "Type of entity affected"
+    },
+    "entity_id": {
+      "type": "string"
+    },
+    "details": {
+      "type": "string",
+      "description": "Additional details about the action"
+    },
+    "ip_address": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "user_id",
+    "action"
+  ]
+}

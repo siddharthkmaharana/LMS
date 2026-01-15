@@ -1,0 +1,50 @@
+{
+  "name": "CourseAssignment",
+  "type": "object",
+  "properties": {
+    "course_id": {
+      "type": "string",
+      "description": "Course ID"
+    },
+    "faculty_id": {
+      "type": "string",
+      "description": "Assigned faculty ID"
+    },
+    "semester_id": {
+      "type": "string",
+      "description": "Semester ID"
+    },
+    "section": {
+      "type": "string",
+      "description": "Section (A, B, C, etc.)"
+    },
+    "enrolled_students": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of student IDs"
+    },
+    "max_students": {
+      "type": "number",
+      "default": 60
+    },
+    "room": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "completed",
+        "cancelled"
+      ],
+      "default": "active"
+    }
+  },
+  "required": [
+    "course_id",
+    "faculty_id",
+    "semester_id"
+  ]
+}

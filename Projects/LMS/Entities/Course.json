@@ -1,0 +1,75 @@
+{
+  "name": "Course",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string",
+      "description": "Course code (e.g., CS101)"
+    },
+    "name": {
+      "type": "string",
+      "description": "Course name"
+    },
+    "description": {
+      "type": "string"
+    },
+    "department_id": {
+      "type": "string"
+    },
+    "program_id": {
+      "type": "string"
+    },
+    "semester_number": {
+      "type": "number",
+      "description": "Which semester this course belongs to"
+    },
+    "credits": {
+      "type": "number"
+    },
+    "course_type": {
+      "type": "string",
+      "enum": [
+        "core",
+        "elective",
+        "lab",
+        "project"
+      ],
+      "default": "core"
+    },
+    "syllabus": {
+      "type": "string",
+      "description": "Course syllabus content"
+    },
+    "learning_objectives": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "prerequisites": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Prerequisite course IDs"
+    },
+    "total_lectures": {
+      "type": "number",
+      "description": "Expected total lectures"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "archived"
+      ],
+      "default": "active"
+    }
+  },
+  "required": [
+    "code",
+    "name",
+    "department_id",
+    "credits"
+  ]
+}

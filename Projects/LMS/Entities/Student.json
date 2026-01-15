@@ -1,0 +1,74 @@
+{
+  "name": "Student",
+  "type": "object",
+  "properties": {
+    "roll_number": {
+      "type": "string",
+      "description": "Unique student roll number"
+    },
+    "user_id": {
+      "type": "string",
+      "description": "Associated user account ID"
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "program_id": {
+      "type": "string",
+      "description": "Enrolled program ID"
+    },
+    "department_id": {
+      "type": "string"
+    },
+    "current_semester": {
+      "type": "number",
+      "description": "Current semester number (1-8)"
+    },
+    "admission_year": {
+      "type": "number"
+    },
+    "batch": {
+      "type": "string",
+      "description": "Batch year (e.g., 2024-2028)"
+    },
+    "profile_image": {
+      "type": "string"
+    },
+    "guardian_name": {
+      "type": "string"
+    },
+    "guardian_phone": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "graduated",
+        "dropped",
+        "suspended"
+      ],
+      "default": "active"
+    }
+  },
+  "required": [
+    "roll_number",
+    "first_name",
+    "last_name",
+    "email",
+    "program_id"
+  ]
+}

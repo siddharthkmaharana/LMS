@@ -1,0 +1,49 @@
+{
+  "name": "Program",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Program name (e.g., B.Tech Computer Science)"
+    },
+    "code": {
+      "type": "string",
+      "description": "Program code"
+    },
+    "department_id": {
+      "type": "string",
+      "description": "Associated department ID"
+    },
+    "duration_years": {
+      "type": "number",
+      "description": "Program duration in years"
+    },
+    "total_credits": {
+      "type": "number",
+      "description": "Total credits required"
+    },
+    "degree_type": {
+      "type": "string",
+      "enum": [
+        "undergraduate",
+        "postgraduate",
+        "doctorate",
+        "diploma"
+      ],
+      "default": "undergraduate"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "inactive"
+      ],
+      "default": "active"
+    }
+  },
+  "required": [
+    "name",
+    "code",
+    "department_id"
+  ]
+}

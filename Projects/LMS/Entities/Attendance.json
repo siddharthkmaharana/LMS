@@ -1,0 +1,50 @@
+{
+  "name": "Attendance",
+  "type": "object",
+  "properties": {
+    "lecture_id": {
+      "type": "string"
+    },
+    "student_id": {
+      "type": "string"
+    },
+    "course_id": {
+      "type": "string"
+    },
+    "course_assignment_id": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "present",
+        "absent",
+        "late",
+        "excused"
+      ],
+      "default": "absent"
+    },
+    "marked_by": {
+      "type": "string",
+      "description": "Faculty ID who marked attendance"
+    },
+    "marked_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "remarks": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "lecture_id",
+    "student_id",
+    "course_id",
+    "date",
+    "status"
+  ]
+}

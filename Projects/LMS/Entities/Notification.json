@@ -1,0 +1,55 @@
+{
+  "name": "Notification",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "Target user ID"
+    },
+    "title": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "lecture",
+        "assignment",
+        "attendance",
+        "announcement",
+        "system"
+      ],
+      "default": "system"
+    },
+    "reference_type": {
+      "type": "string",
+      "description": "Entity type (lecture, assignment, etc.)"
+    },
+    "reference_id": {
+      "type": "string",
+      "description": "Related entity ID"
+    },
+    "is_read": {
+      "type": "boolean",
+      "default": false
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "low",
+        "normal",
+        "high",
+        "urgent"
+      ],
+      "default": "normal"
+    }
+  },
+  "required": [
+    "user_id",
+    "title",
+    "message",
+    "type"
+  ]
+}

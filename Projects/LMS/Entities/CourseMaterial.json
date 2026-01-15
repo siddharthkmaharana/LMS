@@ -1,0 +1,53 @@
+{
+  "name": "CourseMaterial",
+  "type": "object",
+  "properties": {
+    "course_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "material_type": {
+      "type": "string",
+      "enum": [
+        "pdf",
+        "ppt",
+        "video",
+        "link",
+        "document",
+        "other"
+      ],
+      "default": "document"
+    },
+    "file_url": {
+      "type": "string"
+    },
+    "external_link": {
+      "type": "string"
+    },
+    "uploaded_by": {
+      "type": "string"
+    },
+    "version": {
+      "type": "number",
+      "default": 1
+    },
+    "unit_number": {
+      "type": "number",
+      "description": "Unit/module number"
+    },
+    "is_visible": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "course_id",
+    "title",
+    "material_type"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Semester",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Semester name (e.g., Fall 2024)"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Semester start date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Semester end date"
+    },
+    "academic_year": {
+      "type": "string",
+      "description": "Academic year (e.g., 2024-2025)"
+    },
+    "is_current": {
+      "type": "boolean",
+      "default": false,
+      "description": "Is this the current active semester"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "upcoming",
+        "active",
+        "completed"
+      ],
+      "default": "upcoming"
+    }
+  },
+  "required": [
+    "name",
+    "start_date",
+    "end_date",
+    "academic_year"
+  ]
+}

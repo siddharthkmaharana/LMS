@@ -1,0 +1,71 @@
+{
+  "name": "Faculty",
+  "type": "object",
+  "properties": {
+    "employee_id": {
+      "type": "string",
+      "description": "Unique employee ID"
+    },
+    "user_id": {
+      "type": "string",
+      "description": "Associated user account ID"
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "department_id": {
+      "type": "string",
+      "description": "Department ID"
+    },
+    "designation": {
+      "type": "string",
+      "enum": [
+        "professor",
+        "associate_professor",
+        "assistant_professor",
+        "lecturer",
+        "visiting_faculty"
+      ],
+      "default": "assistant_professor"
+    },
+    "specialization": {
+      "type": "string"
+    },
+    "qualification": {
+      "type": "string"
+    },
+    "joining_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "profile_image": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "on_leave",
+        "inactive"
+      ],
+      "default": "active"
+    }
+  },
+  "required": [
+    "employee_id",
+    "first_name",
+    "last_name",
+    "email",
+    "department_id"
+  ]
+}

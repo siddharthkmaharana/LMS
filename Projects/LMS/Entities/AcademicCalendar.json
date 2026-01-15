@@ -1,0 +1,57 @@
+{
+  "name": "AcademicCalendar",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "For multi-day events"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "holiday",
+        "exam",
+        "registration",
+        "result",
+        "event",
+        "vacation"
+      ],
+      "default": "event"
+    },
+    "semester_id": {
+      "type": "string"
+    },
+    "is_holiday": {
+      "type": "boolean",
+      "default": false
+    },
+    "affects_all": {
+      "type": "boolean",
+      "default": true,
+      "description": "Affects all departments"
+    },
+    "department_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Specific departments if not all"
+    }
+  },
+  "required": [
+    "title",
+    "date",
+    "event_type"
+  ]
+}

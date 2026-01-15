@@ -1,0 +1,66 @@
+{
+  "name": "Submission",
+  "type": "object",
+  "properties": {
+    "assignment_id": {
+      "type": "string"
+    },
+    "student_id": {
+      "type": "string"
+    },
+    "submitted_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "is_late": {
+      "type": "boolean",
+      "default": false
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "comments": {
+      "type": "string",
+      "description": "Student comments"
+    },
+    "marks_obtained": {
+      "type": "number"
+    },
+    "feedback": {
+      "type": "string",
+      "description": "Faculty feedback"
+    },
+    "graded_by": {
+      "type": "string"
+    },
+    "graded_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "submitted",
+        "graded",
+        "returned",
+        "resubmit_requested"
+      ],
+      "default": "submitted"
+    }
+  },
+  "required": [
+    "assignment_id",
+    "student_id"
+  ]
+}
